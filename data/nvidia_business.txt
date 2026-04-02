@@ -1,0 +1,11 @@
+NVIDIA originally focused on gaming GPUs, but gaming is now a small part of its business compared to data centers.
+
+NVIDIA generates the majority of its revenue from its Data Center segment, which is driven by AI infrastructure demand.
+
+NVIDIA's Data Center business accounts for roughly 90% of total revenue, making it the dominant revenue source.
+
+NVIDIA’s major customers include large cloud providers such as Microsoft, Amazon, and Google.
+
+NVIDIA also operates in gaming, professional visualization, and automotive/robotics segments.
+
+NVIDIA is expanding into robotics, autonomous vehicles, and telecom networks as part of its long-term strategy.

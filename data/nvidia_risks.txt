@@ -1,0 +1,13 @@
+NVIDIA is highly dependent on its data center business, which contributes the majority of revenue.
+
+NVIDIA faces customer concentration risk because a few large cloud providers generate most of its demand.
+
+NVIDIA supply chain risk is linked to reliance on TSMC for chip manufacturing.
+
+NVIDIA is exposed to export restrictions on AI chips, which may reduce international revenue.
+
+NVIDIA faces competition from AMD, Intel, and custom AI chips developed by major tech companies.
+
+NVIDIA may experience margin pressure due to expensive new chip development cycles.
+
+NVIDIA faces regulatory risks due to evolving global AI laws and restrictions.
