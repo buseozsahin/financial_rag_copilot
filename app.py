@@ -1,5 +1,5 @@
-import os
 import streamlit as st
+from chunking import load_documents, chunk_text
 
 st.markdown(
     "<h1 style='text-align: center;'>Financial Research Copilot</h1>",
@@ -16,19 +16,12 @@ user_query = st.text_input(
 if user_query:
     st.write("Analyzing..")
 
-# if user_query:
-#     st.write("Answer:")
-#ok     st.write("This is a simulated financial analysis based on your query.")
+"""Loading an chunking the .txt files"""
+docs = load_documents()
+all_chunks = []
 
+for doc in docs:
+    chunks = chunk_text(doc["text"])
 
-all_documents = []
-
-for file_name in os.listdir("data"):
-    with open(f"{"data"}/{file_name}", "r") as f:
-        text = f.read()
-
-        all_documents.append({
-            "source": file_name,
-            "text": text
-        })
-print(all_documents)
+    for chunk in chunks:
+        all_chunks.append({"source": doc["source"], "text": chunk})
