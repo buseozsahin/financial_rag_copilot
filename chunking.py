@@ -22,3 +22,16 @@ def chunk_text(text, chunk_size = 400, chunk_overlap = 80):
         start = end - chunk_overlap
 
     return chunks
+
+"""Loading and chunking the .txt files"""
+def build_chunks():
+    docs = load_documents()
+    all_chunks = []
+
+    for doc in docs:
+        chunks = chunk_text(doc["text"])
+
+        for chunk in chunks:
+            all_chunks.append({"source": doc["source"], "text": chunk})
+
+    return all_chunks
