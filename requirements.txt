@@ -1,0 +1,11 @@
+pip~=23.2.1
+attrs~=26.1.0
+protobuf~=7.34.1
+pillow~=12.2.0
+tornado~=6.5.5
+Jinja2~=3.1.6
+filelock~=3.25.2
+streamlit~=1.56.0
+faiss-cpu~=1.13.2
+numpy~=2.4.4
+sentence-transformers~=5.3.0
