@@ -1,5 +1,7 @@
 # Financial Rag Copilot
 
+![screenshot.png](screenshot.png)
+
 A user-controlled Retrieval-Augmented Generation (RAG) system that dynamically adjusts retrieval depth, response style, and LLM token usage based on selected modes: Fast, Balanced, and Accurate.
 
 This project demonstrates a tradeoff between speed and accuracy in LLM-based systems.
@@ -17,7 +19,20 @@ Interactive UI using Streamlit
 
 ## Installation
 
+Ensure that you have Python 3.10+ is installed.
+
 Clone the repository
+
+Create python virtual env:
+```
+python3 -m venv venv
+```
+
+Activate python virtual env:
+```
+source venv/bin/activate
+```
+
 Install Python dependency (requirements.txt)
 ```
 pip install -r requirements.txt
@@ -36,6 +51,8 @@ Run the application
 ```
 streamlit run app.py
 ```
+
+This might take a few mins...
 
 ## How it works?
 
