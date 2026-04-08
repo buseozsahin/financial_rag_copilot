@@ -21,9 +21,10 @@ if user_query:
 
     config = get_rag_config(mode)
 
-    results = search(user_query, mode)
-    chunks = [r["text"] for r in results]
-    result = get_llm_answer(user_query, chunks, mode)
+    with st.spinner():
+        results = search(user_query, mode)
+        chunks = [r["text"] for r in results]
+        result = get_llm_answer(user_query, chunks, mode)
 
     end_time = time.time()
     duration = end_time - start_time
@@ -38,6 +39,5 @@ if user_query:
     st.divider()
     st.markdown(f"""
     **Time taken:** {duration:.2f} seconds  
-    **Prompt tokens:** {prompt_tokens}  
-    **Generated tokens:** {generated_tokens}  
+    **Tokens spent:** {generated_tokens}  
     """)

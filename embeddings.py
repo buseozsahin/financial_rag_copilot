@@ -3,7 +3,6 @@ from chunking import build_chunks
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-"""Convert the text into vector"""
 def get_embedding(text):
     return model.encode(text)
 

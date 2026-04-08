@@ -1,6 +1,5 @@
 import os
 
-"""Loading the dataset documents"""
 def load_documents(folder = "data"):
     documents = []
     for file_name in os.listdir(folder):
@@ -11,7 +10,6 @@ def load_documents(folder = "data"):
 
     return documents
 
-"""Chunking the loaded text"""
 def chunk_text(text, chunk_size = 400, chunk_overlap = 80):
     chunks = []
     start = 0
@@ -23,7 +21,6 @@ def chunk_text(text, chunk_size = 400, chunk_overlap = 80):
 
     return chunks
 
-"""Loading and chunking the .txt files"""
 def build_chunks():
     docs = load_documents()
     all_chunks = []

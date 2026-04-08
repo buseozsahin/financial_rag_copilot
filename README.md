@@ -27,6 +27,9 @@ Install Ollama llama3.2
 ```
 curl -fsSL https://ollama.com/install.sh | sh
 ```
+```
+ollama pull llama3.2
+```
 
 ## How to run?
 Run the application
