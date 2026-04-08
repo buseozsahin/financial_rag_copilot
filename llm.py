@@ -1,13 +1,16 @@
 import requests
+from rag_config import get_rag_config
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 
 
-def build_prompt(query, chunks):
+def build_prompt(query, chunks, style):
     context = "\n\n".join(chunks)
 
     return f"""
     You are a STRICT financial QA system.
+    
+    STYLE: {style}
     
     CRITICAL RULES:
     1. Use ONLY the information inside the provided chunks.
@@ -29,7 +32,6 @@ def build_prompt(query, chunks):
     ---
     INSTRUCTIONS:
     - Always structure the answer in "Pros and Cons" format
-    - Use clear bullet points
     - Be concise and financial-analysis focused
     - Do not add information not supported by context
     
@@ -46,18 +48,26 @@ def build_prompt(query, chunks):
     ANSWER:
     """
 
-def call_llm(prompt):
+def call_llm(prompt, tokens):
     response = requests.post(
         OLLAMA_URL,
         json={
             "model": "llama3.2",
             "prompt": prompt,
-            "stream": False
+            "stream": False,
+            "options": {
+                "num_predict": tokens
+            }
         }
     )
+    return response.json()
 
-    return response.json()["response"]
+def get_llm_answer(query, chunks, mode):
+    config = get_rag_config(mode)
+    style = config["style"]
+    tokens = config["max_tokens"]
 
-def get_llm_answer(query, chunks):
-    prompt = build_prompt(query, chunks)
-    return call_llm(prompt)
+    prompt = build_prompt(query, chunks, style)
+    result = call_llm(prompt, tokens)
+
+    return result
